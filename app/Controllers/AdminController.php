@@ -67,13 +67,6 @@ class AdminController {
             ]);
         }
     }
-    public function formUpload() {
-        return view('upload');
-    }
-    public function doUpload() {
-        $file = $_FILES['berkas'];
-        App::storage('cover')->upload('/', $file);
-    }
     public function logout() {
         Session::unset('admin');
         redirect('admin/login');
