@@ -1,0 +1,104 @@
+body {
+    background-color: #fff;
+}
+.header {
+    position: fixed;
+    top: 0px;left: 0px;right: 0px;
+    line-height: 70px;
+    z-index: 4;
+}
+.header #toggleMenu {
+    float: left;
+    margin-left: 5%;
+    font-size: 23px;
+    cursor: pointer;
+}
+.header h1 {
+    margin: 0;
+    font-size: 23px;
+    margin-left: 2.5%;
+    float: left;
+}
+.LeftMenu {
+    position: fixed;
+    top: 0px;left: 0px;bottom: 0px;
+    width: 25%;
+    left: -100%;
+    box-shadow: 1px 1px 5px 1px #ddd;
+    z-index: 3;
+    background-color: #fff;
+}
+.LeftMenu .profile {
+    background-color: #2980b9;
+    color: #fff;
+    box-sizing: border-box;
+    height: 250px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.LeftMenu .profile a { color: #fff; }
+.LeftMenu .profile .img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 900px;
+}
+
+.LeftMenu a {
+    color: #444;
+}
+.LeftMenu li {
+    list-style: none;
+    margin: 15px 20px;
+    box-sizing: border-box;
+    padding: 20px 25px;
+    transition: 0.4s;
+    border-radius: 6px;
+}
+.LeftMenu li .icon {
+    display: inline-block;
+    width: 40px;
+}
+.LeftMenu li:hover {box-shadow: 1px 1px 5px 1px #ddd;}
+
+.container {
+    position: absolute;
+    top: 135px;left: 5%;right: 5%;
+    z-index: 1;
+    margin-bottom: 45px;
+}
+
+.header.active {
+    left: 25% !important;
+}
+.container.active {
+    left: 30% !important;
+}
+.LeftMenu.active { left: 0% !important; }
+
+.createBtn {
+    position: fixed;
+    bottom: 10%;right: 2.5%;
+    width: 65px;
+    line-height: 65px;
+    text-align: center;
+    border-radius: 200px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+}
+.createBtn:hover { background-color: #2980b9; }
+
+@media (max-width: 480px) {
+    .LeftMenu {
+        width: 80%;
+    }
+    .container { top: 115px; }
+    .container.active { left: 5% !important; }
+    .header.active {
+        left: 80% !important;
+        right: -100%;
+    }
+    .header h1 { margin-left: 10%; }
+}

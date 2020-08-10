@@ -1,0 +1,59 @@
+{
+	"table": {
+		"admins": [
+			"id int(11) not null",
+			"name varchar(50) not null",
+			"email varchar(50) not null",
+			"password varchar(50) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"pollings": [
+			"id int(11) not null",
+			"title varchar(255) not null",
+			"description text not null",
+			"cover varchar(255)",
+			"end_date DATE not null",
+			"created_at TIMESTAMP not null"
+		],
+		"voters": [
+			"id int(11) not null",
+			"polling_id int(11) not null",
+			"name varchar(255) not null",
+			"email varchar(255) not null",
+			"token varchar(25) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"votes": [
+			"id int(11) not null",
+			"polling_id int(11) not null",
+			"voter_id int(11) not null",
+			"candidate_id int(11) not null",
+			"created_at TIMESTAMP not null"
+		],
+		"candidates": [
+			"id int(11) not null",
+			"polling_id int(11) not null",
+			"name varchar(255) not null",
+			"photo varchar(255) not null",
+			"bio text not null",
+			"label_color varchar(10) not null",
+			"created_at TIMESTAMP not null"
+		]
+	},
+	"attribute": {
+		"primary": [
+			"admins.id",
+			"pollings.id",
+			"voters.id",
+			"votes.id",
+			"candidates.id"
+		],
+		"foreign": [
+			"voters.polling_id=>pollings.id",
+			"votes.polling_id=>pollings.id",
+			"votes.voter_id=>voters.id",
+			"votes.candidate_id=>candidates.id",
+			"candidates.polling_id=>pollings.id"
+		]
+	}
+}
